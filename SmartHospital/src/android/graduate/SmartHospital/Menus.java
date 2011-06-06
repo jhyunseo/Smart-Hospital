@@ -16,13 +16,13 @@ public class Menus extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menus);
         
-        String name = "김철수";
-        String hname = "세인트사탄";
+        String name = "Test";
+        String hname = "TestH";
         String iday = "39";
         
-        String simpleinfo = name+"님 안녕하세요\n"+hname+" 병원입니다.\n"+iday+"일째 입원중이십니다.";
+        String simpleinfo = name+"���덈뀞�섏꽭��n"+hname+" 蹂묒썝�낅땲��\n"+iday+"�쇱㎏ �낆썝以묒씠��땲��";
         
-        //TextView에 표시해줄 내용
+        //TextView���쒖떆�댁쨪 �댁슜
         TextView tv = (TextView)findViewById(R.id.simpleinfo);
         tv.setText(simpleinfo);
         
@@ -43,8 +43,8 @@ public class Menus extends Activity {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			Intent intent;
-			String parentPN; //보호자 전화번호
-			/**각 버튼별로 해야할 일을 채워넣는다.
+			String parentPN; //蹂댄샇���꾪솕踰덊샇
+			/**媛�踰꾪듉蹂꾨줈 �댁빞���쇱쓣 梨꾩썙�ｋ뒗��
 			 * 
 			 */
 			switch(v.getId()){
@@ -69,14 +69,14 @@ public class Menus extends Activity {
 				startActivity(intent);
 				break;
 			case R.id.parentcallbtn:
-				parentPN = "01193699621";	//보호자 전화번호 DB에서 가져와야 함
+				parentPN = "01193699621";	//蹂댄샇���꾪솕踰덊샇 DB�먯꽌 媛�졇��빞 ��
 				intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+parentPN));
 				startActivity(intent);
 				break;
 			case R.id.emergencybtn:
-				//병원에 긴급콜
+				//蹂묒썝��湲닿툒肄�
 				((Button)findViewById(R.id.emergencybtn)).setBackgroundColor(Color.GREEN);
-				((Button)findViewById(R.id.emergencybtn)).setText("신고 완료");
+				((Button)findViewById(R.id.emergencybtn)).setText("�좉퀬 �꾨즺");
 				break;
 			}
 		}
